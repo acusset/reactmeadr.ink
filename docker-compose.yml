@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+    node:
+        container_name: node
+        build:
+            context: .
+            args: # from .env file
+                NODE_VERSION: ${NODE_VERSION}
+                NPM_VERSION: ${NPM_VERSION}
+        environment:
+            NODE_ENV: ${NODE_ENV}
+        ports:
+            - '3000:3000'
+        volumes:
+            - .:/home/node/reactmeadr.ink:delegated
