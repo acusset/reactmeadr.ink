@@ -1,8 +1,12 @@
 html {
-  background-image: url('./background.svg');
+  background-image: url("./background.svg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
   height: 100%;
+}
+
+.hero {
+  background-color: coral;
 }

@@ -5,7 +5,10 @@ import ProductCard from "./ProductCard";
 class ProductRow extends React.Component<{ drinks: Product[] }> {
   list = this.props.drinks.map((product) => {
     return (
-      <div className="column is-3">
+      <div
+        key={product.imageUri}
+        className="column is-half-mobile is-one-quarter-desktop"
+      >
         <ProductCard
           name={product.name}
           price={product.price}
@@ -17,7 +20,11 @@ class ProductRow extends React.Component<{ drinks: Product[] }> {
   });
 
   render() {
-    return <div className="columns">{this.list}</div>;
+    return (
+      <div className="columns is-variable is-1-mobile is-2-desktop is-mobile">
+        {this.list}
+      </div>
+    );
   }
 }
 
