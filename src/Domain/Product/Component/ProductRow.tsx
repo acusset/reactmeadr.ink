@@ -7,7 +7,7 @@ class ProductRow extends React.Component<{ drinks: Product[] }> {
     return (
       <div
         key={product.imageUri}
-        className="column is-half-mobile is-one-quarter-desktop"
+        className="column is-2-fullhd is-one-fifth-widescreen is-one-quarter-desktop is-one-third-tablet is-half-mobile"
       >
         <ProductCard
           name={product.name}
@@ -20,11 +20,7 @@ class ProductRow extends React.Component<{ drinks: Product[] }> {
   });
 
   render() {
-    return (
-      <div className="columns is-variable is-1-mobile is-2-desktop is-mobile">
-        {this.list}
-      </div>
-    );
+    return <div className="columns is-mobile is-multiline is-variable is-2">{this.list}</div>;
   }
 }
 

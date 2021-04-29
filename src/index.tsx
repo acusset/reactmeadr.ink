@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import "./bulma.css";
-import ProductTable from "./Domain/Product/Component/ProductTable";
+import ProductRow from "./Domain/Product/Component/ProductRow";
 import reportWebVitals from "./reportWebVitals";
 import drinks from "./drinks.json";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ProductTable drinks={drinks} columns={4} />
+    <ProductRow drinks={drinks} />
   </React.StrictMode>,
   document.getElementById("root")
 );
