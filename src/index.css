@@ -10,3 +10,7 @@ html {
 .hero {
   background-color: coral;
 }
+
+.card {
+  height: 100%;
+}

@@ -1,8 +1,8 @@
 version: '3.8'
 
 services:
-    node:
-        container_name: node
+    front:
+        container_name: react
         build:
             context: .
             args: # from .env file
@@ -10,8 +10,8 @@ services:
                 NPM_VERSION: ${NPM_VERSION}
         environment:
             NODE_ENV: ${NODE_ENV}
-            STRIPE_PUBLISHABLE_API_KEY: ${STRIPE_PUBLISHABLE_API_KEY}
-            API_URL: ${API_URL}
+            REACT_APP_STRIPE_PUBLISHABLE_API_KEY: ${STRIPE_PUBLISHABLE_API_KEY}
+            REACT_APP_API_URL: ${API_URL}
         ports:
             - '3000:3000'
         volumes:
