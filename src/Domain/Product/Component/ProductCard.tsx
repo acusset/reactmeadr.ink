@@ -17,7 +17,7 @@ class ProductCard extends React.Component<Product, { hover: boolean }> {
     const stripe = await stripePromise;
     const session = await this.fetchSession();
 
-    if (stripe) {
+    if (stripe && session && "id" in session) {
       const result = await stripe.redirectToCheckout({
         sessionId: session.id,
       });
@@ -28,15 +28,15 @@ class ProductCard extends React.Component<Product, { hover: boolean }> {
   };
 
   fetchSession = async (): Promise<any> => {
-    return (
-      await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(this.props),
-      })
-    ).json();
+    return await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(this.props),
+    })
+      .then((response) => response.json())
+      .catch(console.log);
   };
 
   toggleHover = (event: MouseEvent): void => {
